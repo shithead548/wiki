@@ -1,11 +1,45 @@
 Title         : 统计学习笔记
-Author        : You
+Author        : Stanley Wu
+Email         : bleedtodry@hotmail.com
+Affiliation   : GmaxInfo
 Logo          : True
+Package       : fontspec
+
+Tex Header :
+  \fontspec{SimSun}
 
 [TITLE]
 
+[TOC]
+
 # 线性回归
 # 分类算法
+## Logistic Regression
+基本模型：
+~Equation
+p(X)=\frac{e^{\beta_0+\beta_{1X}}}{1+e^{\beta_0+\beta_{1X}}}
+~
+Log-odds logit：
+~Equation
+\log(\frac{p(X)}{1-p(X)}) = \beta_0+\beta_{1X}
+~
+最大似然参数估计：
+~Equation
+  \zeta(\beta_0,\beta_1)= \prod_{i:y_i=1}p(x_i)\prod_{i:y_i=0}(1-p(x_i))
+~
+##  Linear Discriminant Analysis
+Logistic Regression适用于二元离散回归，当因变量大于2个时，使用LDA
 # 重抽样
 ## Cross-Validation
-$x$
+### Leave-One-Out Cross-Validation
+![LOOCV]
+
+[LOOCV]: images/LOOCV.png "LOOCV" { width:auto; max-width:80% }
+~Equation
+  CV=\frac{1}{n}\sum_{i=1}^{n}MSE_i
+~
+### k-Folder Cross-Validation
+~ Equation
+CV_{(K)}=\sum_{k=1}^{K}\frac{n_k}{n}MSE_k
+~
+LOOCV是k-Folder CV的一种特殊情况，即$k=n$。
