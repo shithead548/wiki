@@ -3,10 +3,9 @@ Author        : Stanley Wu
 Email         : bleedtodry@hotmail.com
 Affiliation   : GmaxInfo
 Logo          : True
-Package       : fontspec
 
-Tex Header :
-  \fontspec{SimSun}
+~Body: font-family="SimSun"
+
 
 [TITLE]
 

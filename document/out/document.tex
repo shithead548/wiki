@@ -13,21 +13,22 @@
 
 
 
-%mdk-data-line={11}
+{\mdfontfamily{SimSun}
+%mdk-data-line={15}
 \mdxtitleblockstart{}
-%mdk-data-line={11}
-\mdxtitle{\mdline{11}统计学习笔记}%mdk
+%mdk-data-line={15}
+\mdxtitle{\mdline{15}统计学习笔记}%mdk
 \mdxauthorstart{}
-%mdk-data-line={16}
-\mdxauthorname{\mdline{16}Stanley Wu}%mdk
+%mdk-data-line={20}
+\mdxauthorname{\mdline{20}Stanley Wu}%mdk
 
-%mdk-data-line={19}
-\mdxauthoraddress{\mdline{19}GmaxInfo}%mdk
+%mdk-data-line={23}
+\mdxauthoraddress{\mdline{23}GmaxInfo}%mdk
 
-%mdk-data-line={22}
-\mdxauthoremail{\mdline{22}bleedtodry@hotmail.com}%mdk
+%mdk-data-line={26}
+\mdxauthoremail{\mdline{26}bleedtodry@hotmail.com}%mdk
 \mdxauthorend\mdtitleauthorrunning{}{}\mdxtitleblockend%mdk
-\mdline{13}
+\mdline{17}
 \begin{mdtoc}%mdk
 
 \section*{Contents}\label{sec-contents}%mdk%mdk
@@ -38,11 +39,27 @@
 
 \mdtocitemx{section}{\mdref{section}{2.\hspace*{0.5em}分类算法}}%mdk
 
+\begin{mdtocblock}%mdk
+
+\mdtocitemx{sec-logistic-regression}{\mdref{sec-logistic-regression}{2.1.\hspace*{0.5em}Logistic Regression}}%mdk
+
+\mdtocitemx{sec-linear-discriminant-analysis}{\mdref{sec-linear-discriminant-analysis}{2.2.\hspace*{0.5em}Linear Discriminant Analysis}}%mdk
+%mdk
+\end{mdtocblock}%mdk
+
 \mdtocitemx{section}{\mdref{section}{3.\hspace*{0.5em}重抽样}}%mdk
 
 \begin{mdtocblock}%mdk
 
 \mdtocitemx{sec-cross-validation}{\mdref{sec-cross-validation}{3.1.\hspace*{0.5em}Cross-Validation}}%mdk
+
+\begin{mdtocblock}%mdk
+
+\mdtocitemx{sec-leave-one-out-cross-validation}{\mdref{sec-leave-one-out-cross-validation}{3.1.1.\hspace*{0.5em}Leave-One-Out Cross-Validation}}%mdk
+
+\mdtocitemx{sec-k-folder-cross-validation}{\mdref{sec-k-folder-cross-validation}{3.1.2.\hspace*{0.5em}k-Folder Cross-Validation}}%mdk
+%mdk
+\end{mdtocblock}%mdk
 %mdk
 \end{mdtocblock}%mdk
 %mdk
@@ -50,24 +67,74 @@
 %mdk
 \end{mdtoc}%mdk
 
-%mdk-data-line={15}
-\section{\mdline{15}1.\hspace*{0.5em}\mdline{15}线性回归}\label{section}%mdk%mdk
+%mdk-data-line={19}
+\section{\mdline{19}1.\hspace*{0.5em}\mdline{19}线性回归}\label{section}%mdk%mdk
 
-%mdk-data-line={16}
-\section{\mdline{16}2.\hspace*{0.5em}\mdline{16}分类算法}\label{section}%mdk%mdk
-
-%mdk-data-line={17}
-\section{\mdline{17}3.\hspace*{0.5em}\mdline{17}重抽样}\label{section}%mdk%mdk
-
-%mdk-data-line={18}
-\subsection{\mdline{18}3.1.\hspace*{0.5em}\mdline{18}Cross-Validation}\label{sec-cross-validation}%mdk%mdk
+%mdk-data-line={20}
+\section{\mdline{20}2.\hspace*{0.5em}\mdline{20}分类算法}\label{section}%mdk%mdk
 
 %mdk-data-line={21}
+\subsection{\mdline{21}2.1.\hspace*{0.5em}\mdline{21}Logistic Regression}\label{sec-logistic-regression}%mdk%mdk
+
+%mdk-data-line={22}
+\noindent\mdline{22}基本模型：%mdk
+\label{}%mdk
+\noindent\mdline{23}\mdmathtag{(1)}\mdline{23}
+\noindent\[%mdk-data-line={24}
+p(X)=\frac{e^{\beta_0+\beta_{1X}}}{1+e^{\beta_0+\beta_{1X}}}
+\]%mdk
+\noindent\mdline{26}Log-odds logit：
+\label{}%mdk
+\noindent\mdline{27}\mdmathtag{(2)}\mdline{27}
+\noindent\[%mdk-data-line={28}
+\log(\frac{p(X)}{1-p(X)}) = \beta_0+\beta_{1X}
+\]%mdk
+\noindent\mdline{30}最大似然参数估计：
+\label{}%mdk
+\noindent\mdline{31}\mdmathtag{(3)}\mdline{31}
+\noindent\[%mdk-data-line={32}
+  \zeta(\beta_0,\beta_1)= \prod_{i:y_i=1}p(x_i)\prod_{i:y_i=0}(1-p(x_i))
+\]%mdk
+
+%mdk-data-line={34}
+\subsection{\mdline{34}2.2.\hspace*{0.5em}\mdline{34}Linear Discriminant Analysis}\label{sec-linear-discriminant-analysis}%mdk%mdk
+
+%mdk-data-line={35}
+\noindent\mdline{35}Logistic Regression适用于二元离散回归，当因变量大于2个时，使用LDA%mdk
+
+%mdk-data-line={36}
+\section{\mdline{36}3.\hspace*{0.5em}\mdline{36}重抽样}\label{section}%mdk%mdk
+
+%mdk-data-line={37}
+\subsection{\mdline{37}3.1.\hspace*{0.5em}\mdline{37}Cross-Validation}\label{sec-cross-validation}%mdk%mdk
+
+%mdk-data-line={38}
+\subsubsection{\mdline{38}3.1.1.\hspace*{0.5em}\mdline{38}Leave-One-Out Cross-Validation}\label{sec-leave-one-out-cross-validation}%mdk%mdk
+
+%mdk-data-line={39}
+\noindent\mdline{39}\includegraphics[keepaspectratio=true,width=\dimmin{}{\dimwidth{0.80}}]{images/LOOCV}{}\mdline{39}%mdk
+\label{}%mdk
+\noindent\mdline{42}\mdmathtag{(4)}\mdline{42}
+\noindent\[%mdk-data-line={43}
+  CV=\frac{1}{n}\sum_{i=1}^{n}MSE_i
+\]%mdk
+
+%mdk-data-line={45}
+\subsubsection{\mdline{45}3.1.2.\hspace*{0.5em}\mdline{45}k-Folder Cross-Validation}\label{sec-k-folder-cross-validation}%mdk%mdk
+\label{}%mdk
+\noindent\mdline{46}\mdmathtag{(5)}\mdline{46}
+\noindent\[%mdk-data-line={47}
+CV_{(K)}=\sum_{k=1}^{K}\frac{n_k}{n}MSE_k
+\]%mdk
+\noindent\mdline{49}LOOCV是k-Folder CV的一种特殊情况，即\mdline{49}$k=n$\mdline{49}。
+
+%mdk-data-line={52}
 \begin{mdbmargintb}{4em}{}%mdk
 \begin{mdflushright}%mdk
-{\tiny\mdline{22}Created with~\href{https://www.madoko.net}{Madoko.net}.}%mdk
+{\tiny\mdline{53}Created with~\href{https://www.madoko.net}{Madoko.net}.}%mdk
 \end{mdflushright}%mdk
-\end{mdbmargintb}%mdk%mdk
+\end{mdbmargintb}%mdk
+}%mdk
 
 
 \end{document}
