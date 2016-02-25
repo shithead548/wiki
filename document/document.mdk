@@ -4,6 +4,7 @@ Email         : bleedtodry@hotmail.com
 Affiliation   : GmaxInfo
 Logo          : True
 
+
 ~Body: font-family="SimSun"
 
 
@@ -11,7 +12,17 @@ Logo          : True
 
 [TOC]
 
-# 线性回归
+# 线性模型
+## 特征选择
+### Subset Selection
+#### Best Subset Selection
+
+### Shrinkage
+#### Ridge Regression
+~ Equation
+\sum_{i=1}^{n}(y_i-\beta_0-\sum_{j=1}^{p}\beta_j x_{ij})^2+\lambda \sum_{j=1}^{p}\beta_j^2
+~
+### Dimension Reduction
 # 分类算法
 ## Logistic Regression
 基本模型：
@@ -33,7 +44,7 @@ Logistic Regression适用于二元离散回归，当因变量大于2个时，使
 ### Leave-One-Out Cross-Validation
 ![LOOCV]
 
-[LOOCV]: images/LOOCV.png "LOOCV" { width:auto; max-width:80% }
+[LOOCV]: images/LOOCV.png "LOOCV" { width:auto; max-width:80%}
 ~Equation
   CV=\frac{1}{n}\sum_{i=1}^{n}MSE_i
 ~
@@ -42,3 +53,9 @@ Logistic Regression适用于二元离散回归，当因变量大于2个时，使
 CV_{(K)}=\sum_{k=1}^{K}\frac{n_k}{n}MSE_k
 ~
 LOOCV是k-Folder CV的一种特殊情况，即$k=n$。
+## Bootstrap
+![Bootstrap]
+
+[Bootstrap]: images/Bootstrap.png "Bootstrap" { width:auto; max-width:70% }
+
+# 高维矩阵估计

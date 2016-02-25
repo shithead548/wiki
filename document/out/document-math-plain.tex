@@ -5,41 +5,50 @@
 \newcommand\mdmathmode{plain}
 \newcommand\mdmathrender{svg}
 \usepackage[heading-base={2},section-num={false},bib-label={true}]{madoko2}
-\usepackage{fontspec}
-%mdk-data-line={8}
+%mdk-data-line={7}
 
-  \fontspec{SimSun}
+   \setmainfont{SimSun}
+   
 
 \begin{document}
 
 
 \begin{mdSnippets}
-%mdk-data-line={11}
-%mdk-data-line={19}
+%mdk-data-line={13}
+%mdk-data-line={23}
 \begin{mdDisplaySnippet}[fa844e2e7d8c97568d2d0301d5147257]%mdk
-\[%mdk-data-line={20}
+\[%mdk-data-line={24}
 p(X)=\frac{e^{\beta_0+\beta_{1X}}}{1+e^{\beta_0+\beta_{1X}}}
 \]%mdk
 \end{mdDisplaySnippet}%mdk
-%mdk-data-line={23}
+%mdk-data-line={27}
 \begin{mdDisplaySnippet}[942e7b3b5204549b2a20bcdeba2f4acc]%mdk
-\[%mdk-data-line={24}
+\[%mdk-data-line={28}
 \log(\frac{p(X)}{1-p(X)}) = \beta_0+\beta_{1X}
 \]%mdk
 \end{mdDisplaySnippet}%mdk
-%mdk-data-line={27}
+%mdk-data-line={31}
 \begin{mdDisplaySnippet}[3434640df0abf3c9138498896d5d4bb3]%mdk
-\[%mdk-data-line={28}
+\[%mdk-data-line={32}
   \zeta(\beta_0,\beta_1)= \prod_{i:y_i=1}p(x_i)\prod_{i:y_i=0}(1-p(x_i))
 \]%mdk
 \end{mdDisplaySnippet}%mdk
-%mdk-data-line={38}
-\begin{mdDisplaySnippet}[23b58def11b45727d3351702515f86af]%mdk
-\[%mdk-data-line={39}
-  
+%mdk-data-line={42}
+\begin{mdDisplaySnippet}[bd02d5eff602ebe949ce51403f45384e]%mdk
+\[%mdk-data-line={43}
+  CV=\frac{1}{n}\sum_{i=1}^{n}MSE_i
 \]%mdk
 \end{mdDisplaySnippet}%mdk
-%mdk-data-line={44}
+%mdk-data-line={46}
+\begin{mdDisplaySnippet}[9ad5431ed4f79d040b8d2e68eb912e33]%mdk
+\[%mdk-data-line={47}
+CV_{(K)}=\sum_{k=1}^{K}\frac{n_k}{n}MSE_k
+\]%mdk
+\end{mdDisplaySnippet}%mdk
+%mdk-data-line={49}
+\begin{mdInlineSnippet}[0a4b018f4a1382228c85c71a987d566f]%mdk
+$k=n$\end{mdInlineSnippet}%mdk
+%mdk-data-line={57}
 
 \end{mdSnippets}
 
