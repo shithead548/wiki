@@ -1,0 +1,18 @@
+Title         : C++ Primer学习笔记
+Author        : You
+Logo          : True
+
+[TOC]
+[TITLE]
+
+# 变量和基本类型
+## const
+定义const对象：
+```cpp
+const int buffSize = 512;
+```
+C++11新标准规定，允许将变量声明为**constexpr**类型以便由编译器来验证变量是否是一个常量表达式：
+```cpp
+constexpr int mf = 20;
+```  
+## 类型别名
