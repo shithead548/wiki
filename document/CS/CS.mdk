@@ -1,18 +1,99 @@
 Title         : C++ Primer学习笔记
-Author        : You
+Author        : 吴子达
 Logo          : True
 
-[TOC]
+~Body: font-family="SimSun"
+
 [TITLE]
+[TOC]
 
 # 变量和基本类型
+## 指针
 ## const
 定义const对象：
 ```cpp
-const int buffSize = 512;
+  const int buffSize = 512;
 ```
+跨文件共享const对象：
+```cpp
+  extern const int buffSize;
+  ```
+const对象引用：
+```cpp
+  const int ci = 1024;
+  const int &r1 = ci;
+  ```
+顶层const：  
+指针本身是一个常量  
+底层const：  
+指针所指的对象是一个常量
+
 C++11新标准规定，允许将变量声明为**constexpr**类型以便由编译器来验证变量是否是一个常量表达式：
 ```cpp
-constexpr int mf = 20;
+  constexpr int mf = 20;
 ```  
 ## 类型别名
+传统方法：
+```cpp
+  typedef double wages;
+```
+C++11新标准：
+```cpp
+  using SI = Sales_item;
+  ```
+auto类型说明：
+```cpp
+  auto item = val1 + val2;
+  ```
+decltype：
+返回操作数的数据类型
+# 字符串，向量和数组
+## 标准库类型string
+如何引用：
+```cpp
+  #include <string>
+  using std::string
+  ```
+定义string：
+```cpp
+  string s1;
+  string s2 = s1;
+  string s2(s1);
+  string s3("value");
+  string s3 = "value";
+  string s4(n, '4');
+  ```
+处理每个字符：
+C++11新标准提供for语句来遍历序列中的每个元素：
+```
+  for (declaration: expression)
+      statement
+  ```
+比如：
+```cpp
+  string str("some string");
+  for (auto c: str)
+      cout << c << endl;
+  ```
+~ Note
+总是设下标的类型为string::size_type，确保下标不会小于0
+~
+## 标准库类型vector
+如何引用：
+```cpp
+  #include <vector>
+  using std::vector;
+  ```
+定义vector对象：
+```cpp
+  vector<T> v1;
+  vector<T> v2(v1);
+  vector<T> v2 = v1;
+  vector<T> v3(n,val);
+  vector<T> v4(n);
+  vector<T> v5{a,b,c,...};
+  vector<T> v5={a,b,c,...};
+  ```
+## 迭代器
+
+
