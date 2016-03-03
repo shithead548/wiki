@@ -1,0 +1,25 @@
+Title         : 金融模型学习笔记
+Author        : 吴子达
+Email         : bleedtodry@hotmail.com
+Affiliation   : GmaxInfo
+Logo          : True
+
+
+~Body: font-family="SimSun"
+
+
+[TITLE]
+
+[TOC]
+
+# 因子模型
+~ Equation
+\begin{aligned}
+x &= \alpha+\beta f+\varepsilon  \\ 
+E(\varepsilon) &= 0\\ 
+E(f)&= 0\\ 
+ cov(f,\varepsilon)&=0 \\ 
+ cov(\varepsilon,\varepsilon)&= D,D=(\sigma_1^2,\cdots ,\sigma_1^N)I_N\\ 
+ D&= diag(\sigma_1^2,\cdots ,\sigma_1^N)
+\end{aligned}
+~
