@@ -5,4 +5,33 @@ Logo          : True
 [TITLE]
 [TOC]
 # Flask
+## 配置开发环境
+更新apt-get源：
+```
+  sudo nano /etc/apt/sources.list
+  ```
+打开文件，除了第一行全部删除，然后添加：
+> deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse  
+deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse  
+deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse  
+deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse  
+deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse  
+deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse  
+deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse  
+deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse  
+deb-src http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse  
+deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+安装完成之后运行：
+```
+  sudo apt-get update
+  sudo apt-get upgrade
+  ```
+安装pip和virtualenv：
+```
+  sudo apt-get install python-pip python-dev build-essential 
+  sudo apt-get install --upgrade pip
+  sudo pip install --upgrade virtualenv
+  ```
+
 ## 使用Flask开发Restful API
