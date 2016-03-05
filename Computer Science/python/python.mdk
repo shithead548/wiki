@@ -33,5 +33,44 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
   sudo apt-get install --upgrade pip
   sudo pip install --upgrade virtualenv
   ```
+配置virtualenv：
+```
+  mkdir funny_api
+  cd funny_api
+  virtualenv venv/
+  source venv/bin/activate
+  ```
+进入virtualenv之后：
+```
+  pip install flask
+  ```
+  
+安装visual studio code：
+```
+  sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+  sudo apt-get update -y && sudo apt-get install ubuntu-make -y
+  umake web visual-studio-code
+  ```
+~ Note
+使用umake web visual-studio-code命令的时候不要使用sudo权限
+~
+安装git：
+```
+  sudo apt-get install git
+  git config --global user.name "Your Name"
+  git config --global user.email "youremail@domain.com"
+  ```
+
 
 ## 使用Flask开发Restful API
+| ----------| ----------| ------------------|
+| HTTP Verb | Operation | URL Example       |
++:---------:+-----------+:-----------------:+
+| GET       | Read      | GET/api/project/1 |
+| POST       | Create      | POST/api/project/1 |
+| DELETE       | Delete      | Delete/api/project/1 |
+| PUT       | Update     | PUT/api/project/1 |
+| PATCH       |  Update         |  PATCH/api/project/1                |
+|-----------|-----------|-------------------|
+{ tbody-tr-odd-background-color:Gainsboro; \
+  tr-even-background-color:Floralwhite }
