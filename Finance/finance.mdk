@@ -14,7 +14,7 @@ Tex Headers:  : \setmainfont{SimSun}
 
 [TOC]
 
-# 因子模型
+# 因子模型简介
 ~ Equation
 \begin{aligned}
 x &= \alpha+\beta f+\varepsilon  \\ 
@@ -76,6 +76,12 @@ R_{j,t}-\mu_{f,t} = \beta_{0,j}+\beta_{1,j}(R_{M,t}-\mu_{f,t})+\beta_{2,j}SMB_t+
 该风险都无法被分散。如果解释$t$时刻的因子在$t-1$时刻是可以被预测的，那么因子模型就
 可以用来预测收益。因子模型一般分为三类：统计因子，基本面因子和宏观因子。
 ## 主成分分析
+
+# 单因子有效性检验
+Todo：单因子有效性检验——多因子选股模型的基石
+      量化选股的线性回归体系构建
+
+
 
 
 
