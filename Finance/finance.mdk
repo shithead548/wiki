@@ -3,9 +3,10 @@ Author        : 吴子达
 Email         : bleedtodry@hotmail.com
 Affiliation   : GmaxInfo
 Logo          : True
+Package       : xeCJK
+Package       : fontspec
 
-
-~Body: font-family="SimSun"
+Tex Headers:  : \setmainfont{SimSun}
 
 
 [TITLE]
