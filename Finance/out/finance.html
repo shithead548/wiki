@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.0.0-rc5" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="吴子达" />
+  <title>金融模型学习笔记</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote { 
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013"; 
+      position: absolute;
+      margin-left: -1em; 
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {  
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;  
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 { 
+    margin-top: 1.22em; 
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  { 
+    margin-top: 1ex;    
+  }
+  .madoko h5, .madoko h6 { 
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 { 
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 { 
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt, 
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;    
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+
+<div class="titleblock align-center para-block" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" style="text-align:center;line-adjust:0">
+<div class="title para-block" style="font-size:xx-large;font-weight:bold;margin-bottom:0.5ex;line-adjust:0">金融模型学习笔记</div></div>
+<div class="authors align-center" style="text-align:center;width:80%;line-adjust:0"><table class="authorrow columns block" style="margin-top:2ex;width:100%;line-adjust:0">
+<tbody><tr><td class="author column" style="text-align:center;line-adjust:0">
+<div class="authorname" style="font-size:large;line-adjust:0">吴子达</div>
+<div class="authoraddress" style="line-adjust:0">GmaxInfo</div>
+<div class="authoremail email" style="line-adjust:0">bleedtodry@hotmail.com</div></td></tr></tbody></table></div></div><span data-line=""></span>
+<nav class="toc toc-contents"><h2 id="sec-contents" class="clearnum h1 heading-contents" data-heading-depth="1" style="display:block">Contents</h2>
+<div class="tocblock tocblock1">
+<div class="tocitem tocitem1" data-toc-target="section" data-toc-depth="1" data-toc-line="[1]{.heading-label}.&#8194;\u56E0\u5B50\u6A21\u578B" style="toctarget:section"><a href="#section" class="localref"><span class="heading-label">1</span>.&#8194;因子模型</a></div>
+<div class="tocblock tocblock2">
+<div class="tocitem tocitem2" data-toc-target="section" data-toc-depth="2" data-toc-line="[1.1]{.heading-label}.&#8194;\u5B8F\u89C2\u7ECF\u6D4E\u56E0\u5B50\u6A21\u578B" style="toctarget:section"><a href="#section" class="localref"><span class="heading-label">1.1</span>.&#8194;宏观经济因子模型</a></div>
+<div class="tocitem tocitem2" data-toc-target="section" data-toc-depth="2" data-toc-line="[1.2]{.heading-label}.&#8194;\u534F\u65B9\u5DEE\u77E9\u9635" style="toctarget:section"><a href="#section" class="localref"><span class="heading-label">1.2</span>.&#8194;协方差矩阵</a></div>
+<div class="tocitem tocitem2" data-toc-target="section" data-toc-depth="2" data-toc-line="[1.3]{.heading-label}.&#8194;\u4E3B\u6210\u5206\u5206\u6790" style="toctarget:section"><a href="#section" class="localref"><span class="heading-label">1.3</span>.&#8194;主成分分析</a></div></div></div></nav><h2 id="section" class="h1" data-heading-depth="1" style="display:block"><span class="heading-before"><span class="heading-label">1</span>.&#8194;</span>因子模型</h2>
+<div class="equation para-block" style="line-adjust:0"><span class="equation-before"><span class="equation-label">(1)</span></span>
+
+<div class="mathdisplay para-block input-math" data-math-full="" style="line-adjust:0"><span class="math-rendering" title="Rendering math..."><span class="mathdisplay math-display" data-math-full="">\[\begin{aligned}
+x &amp;= \alpha+\beta f+\varepsilon  \\ 
+E(\varepsilon) &amp;= 0\\ 
+E(f)&amp;= 0\\ 
+ cov(f,\varepsilon)&amp;=0 \\ 
+ cov(\varepsilon,\varepsilon)&amp;= D,D=(\sigma_1^2,\cdots ,\sigma_1^N)I_N\\ 
+ D&amp;= diag(\sigma_1^2,\cdots ,\sigma_1^N)
+\end{aligned}
+\]</span></span></div></div>
+<p class="p noindent para-continued">假设条件：
+</p>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li">残差项为均值为零的变量
+</li>
+<li class="li ul-li list-star-li compact-li">残差项彼此不相关
+</li>
+<li class="li ul-li list-star-li compact-li">残差项与因子之间彼此不相关
+</li>
+<li class="li ul-li list-star-li compact-li">残差项符合iid分布
+</li></ul>
+<h3 id="section" class="h2" data-heading-depth="2" style="display:block"><span class="heading-before"><span class="heading-label">1.1</span>.&#8194;</span>宏观经济因子模型</h3>
+<p class="p noindent">宏观经济因子包括：
+</p>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li">市场收益
+</li>
+<li class="li ul-li list-star-li compact-li">GDP增长率
+</li>
+<li class="li ul-li list-star-li compact-li">国债收益率
+</li>
+<li class="li ul-li list-star-li compact-li">通货膨胀率
+</li>
+<li class="li ul-li list-star-li compact-li">&#8230;
+</li></ul>
+
+<p class="p noindent"><img src="data:image/png;base64,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" title="Rplot" alt="Rplot" data-path="images/Rplot.png" data-linkid="rplot" style="width:auto;max-width:90%">
+</p><h3 id="section" class="h2" data-heading-depth="2" style="display:block"><span class="heading-before"><span class="heading-label">1.2</span>.&#8194;</span>协方差矩阵</h3>
+<p class="p noindent para-continue">由于<span class="math-rendering" title="Rendering math..."><span class="math-inline">$x-\alpha=\beta f+\varepsilon$</span></span>，所以收益的协方差矩阵为：
+</p>
+<div class="equation para-block" style="line-adjust:0"><span class="equation-before"><span class="equation-label">(2)</span></span>
+
+<div class="mathdisplay para-block input-math" data-math-full="" style="line-adjust:0"><span class="math-rendering" title="Rendering math..."><span class="mathdisplay math-display" data-math-full="">\[\sum=E[(x-\alpha)(x-\alpha)^`]
+\]</span></span></div></div>
+<p class="p noindent para-continued">因子模型中使用的都是风险模型。每一时刻<span class="math-rendering" title="Rendering math..."><span class="math-inline">$t$</span></span>的收益被解释为<span class="math-rendering" title="Rendering math..."><span class="math-inline">$t$</span></span>时刻的给定因子的线性组合。
+暴露于共同因子的由收益方差所度量的风险为不可分散风险——无论我们所选择的投资组合有多大，
+该风险都无法被分散。如果解释<span class="math-rendering" title="Rendering math..."><span class="math-inline">$t$</span></span>时刻的因子在<span class="math-rendering" title="Rendering math..."><span class="math-inline">$t-1$</span></span>时刻是可以被预测的，那么因子模型就
+可以用来预测收益。因子模型一般分为三类：统计因子，基本面因子和宏观因子。
+</p><h3 id="section" class="h2" data-heading-depth="2" style="display:block"><span class="heading-before"><span class="heading-label">1.3</span>.&#8194;</span>主成分分析</h3>
+<div class="logomadoko" style="display:block;text-align:right;font-size:xx-small;margin-top:4em">Created with&nbsp;<a href="https://www.madoko.net">Madoko.net</a>.</div><span data-line=""></span></div>
+</body>
+
+</html>

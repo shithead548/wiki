@@ -1,10 +1,11 @@
 Title         : 金融模型学习笔记
 Author        : 吴子达
 Email         : bleedtodry@hotmail.com
-Affiliation   : GmaxInfo
+Affiliation   : 家里蹲大学
 Logo          : True
 Package       : xeCJK
 Package       : fontspec
+Package       : listings
 
 Tex Headers:  : \setmainfont{SimSun}
 
@@ -30,6 +31,40 @@ E(f)&= 0\\
 * 残差项彼此不相关
 * 残差项与因子之间彼此不相关
 * 残差项符合iid分布
+
+## 宏观经济因子模型
+宏观经济因子包括：
+
+* 市场收益
+* GDP增长率
+* 国债收益率
+* 通货膨胀率
+* ...
+
+例如我们对CPI residuals和IP residuals这两个宏观因子进行回归，得到下图：
+![Rplot]
+
+[Rplot]: images/Rplot.png "Rplot" { width:auto; max-width:90% }
+
+上图中的R2指标非常小，说明股票对宏观因子的依耐性不显著，因此下一步分析我们转向
+基本面因子。
+
+## 基本面因子
+### Fama-Fench三因子模型
+在因子模型中，最著名的莫过于1995年由Fama和Fench提出的三因子模型：
+~ Equation
+R_{j,t}-\mu_{f,t} = \beta_{0,j}+\beta_{1,j}(R_{M,t}-\mu_{f,t})+\beta_{2,j}SMB_t+\beta_{3,j}HML_t+\epsilon_t
+~
+
+* CAPM：市场组合的收益
+* SMB: 一个投资组合中小盘股的收益减去大盘股的收益
+* HML：一个投资组合中高账面市值比股票的收益减去低账面市值比股票的收益
+
+### 时间序列分析
+### cross-sectional分析
+
+## 统计因子
+
 
 ## 协方差矩阵
 由于$x-\alpha=\beta f+\varepsilon$，所以收益的协方差矩阵为：
