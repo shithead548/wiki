@@ -1,0 +1,29 @@
+Title         : 后台开发技术
+Author        : 吴子达
+Logo          : True
+
+[TITLE]
+[TOC]
+
+# 分布式系统
+分布式系统的特征：
+
+* The computers operate concurrently
+* The computers fail independently 
+* The computers don't share a global clock
+
+常用的分布式产品：
+
+* 存储：关系式数据库，MongoDB，Cassandra，HDFS
+* 计算：Hadoop，Spark，Storm
+* 同步：NTP，vector clocks
+* 一致性：Paxos，Zookeeper
+* 消息：Kafka
+
+Read replication  
+Sharding  
+Consistent hashing  
+CAP Theorem
+
+# 数据库
+## SQL Server数据库设计
