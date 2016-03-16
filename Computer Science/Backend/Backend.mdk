@@ -26,4 +26,39 @@ Consistent hashing
 CAP Theorem
 
 # 数据库
-## SQL Server数据库设计
+## SQL Server数据库Benchmarking
+Benchmarking原则：
+
+* 设定目标
+* 测量
+* 比较
+* tuning
+* 比较
+
+搜集信息：
+
+* Performance Monitor
+* SQL Trace and Extended Events
+* DMVs
+ * Wait statistics
+ * File statistics 
+ * Index usage statistics 
+ * Performance counters
+* Catalog Views/System Tables
+  * SQL Server configuration
+  * Database and file size
+  * Maintenance job history
+* Application
+  * User activity 
+  * System work 
+  * Batch jobs
+* Application-specific, but within SQL Server
+  * Application schema
+  * Query plans
+
+### Performance Monitor
+PAL
+何时使用：  
+* 
+
+
