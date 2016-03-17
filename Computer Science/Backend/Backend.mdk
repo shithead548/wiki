@@ -26,10 +26,31 @@ Consistent hashing
 CAP Theorem
 
 # 数据库
-## 基础概念
+## 数据库逻辑设计
 ### 规范化
-## 数据库设计
+## 数据库物理设计
+为什么需要对数据库物理层面进行设计，节省资源开销，包括硬盘，内存，缓存，日志等等
+### Data types and row size
+<!--
+时间：
 
+* datetime：8字节
+* datetime2
+
+int：
+
+* bigint
+* tinyint
+
+去除不必要的column
+-->
+#### IN_ROW_DATA
+每行的IN_ROW_DATA的最大存储量为8060字节
+#### ROW_OVERFLOW_DATA
+#### LOB_DATA
+![rowstructure]
+
+[rowstructure]: images/rowstructure.png "rowstructure" { width:auto; max-width:90% }
 
 ## SQL Server数据库Benchmarking
 Benchmarking原则：
