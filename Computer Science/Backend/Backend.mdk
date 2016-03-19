@@ -5,6 +5,7 @@ Logo          : True
 [TITLE]
 [TOC]
 
+
 # 分布式系统
 分布式系统的特征：
 
@@ -84,7 +85,12 @@ Benchmarking原则：
 
 ### Performance Monitor
 PAL
-何时使用：  
-* 
+何时使用
+
+# 其他
+## git
+#### git分支
+查看所有分支：`git checkout`
+
 
 
