@@ -1,0 +1,37 @@
+Title         : Welcome
+Author        : You
+Logo          : True
+
+[TITLE]
+[TOC]
+
+# Angular
+* https://github.com/jedrichards/angularjs-handbook#scopes
+* http://www.angularjsbook.com/angular-basics/chapters/introduction/
+* http://fdietz.github.io/recipes-with-angular-js/controllers/sharing-models-between-nested-controllers.html
+
+## Hello World  
+HTML:
+```html
+ <!DOCTYPE html>
+<html lang="en" ng-app = "mainApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="script.js"></script>
+    <title>Hello World</title>
+</head>
+<body ng-controller = "shapeController">
+    <p>{{message}} <br/> {{type}} </p>
+</div>
+</body>
+</html>
+  ```
+JavaScript:
+```javascript
+var mainApp = angular.module("app", []);
+
+mainApp.controller("MainController", function($scope) {
+    $scope.message = "Hello World!";
+});
+```
