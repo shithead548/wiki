@@ -60,6 +60,16 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
   git config --global user.name "Your Name"
   git config --global user.email "youremail@domain.com"
   ```
+安装node：
+```
+  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  ```
+设置npm镜像为淘宝镜像：
+```
+  npm config set registry "https://registry.npm.taobao.org"
+  ```
+
 
 
 ## 使用Flask开发Restful API
