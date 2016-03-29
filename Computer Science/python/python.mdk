@@ -29,9 +29,7 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
   ```
 安装pip和virtualenv：
 ```
-  sudo apt-get install python-pip python-dev build-essential 
-  sudo apt-get install --upgrade pip
-  sudo pip install --upgrade virtualenv
+  sudo apt-get install python-pip python-dev build-essential python-virtualenv
   ```
 配置virtualenv：
 ```
@@ -57,8 +55,8 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
 安装git：
 ```
   sudo apt-get install git
-  git config --global user.name "Your Name"
-  git config --global user.email "youremail@domain.com"
+  git config --global user.name "Stanley Wu"
+  git config --global user.email "bleedtodry@hotmail.com"
   ```
 安装node：
 ```
